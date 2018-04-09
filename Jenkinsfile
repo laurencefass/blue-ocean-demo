@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'ping -c 12'
+        sh 'ping -c 12 localhost'
       }
     }
   }
