@@ -1,9 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
-      steps {
-        sh 'ping -c 12 localhost'
+    stage('stage 1') {
+      parallel {
+        stage('stage 1') {
+          steps {
+            sh 'ping -c 12 localhost'
+          }
+        }
+        stage('stage 2') {
+          steps {
+            sh 'ping -c -4 localhost'
+          }
+        }
       }
     }
   }
