@@ -10,7 +10,10 @@ pipeline {
         }
         stage('stage 2') {
           steps {
-            sh 'ping -c -4 localhost'
+            timeout(time: 10) {
+              sh 'ping -c 100 localhost'
+            }
+
           }
         }
       }
